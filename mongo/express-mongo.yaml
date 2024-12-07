@@ -26,17 +26,16 @@ spec:
                 secretKeyRef:
                   name: mongo-secret
                   key: mongo-root-username
-
             - name: ME_CONFIG_MONGODB_ADMINPASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mongo-secret
                   key: mongo-root-password
             - name: ME_CONFIG_MONGODB_SERVER
-	            valueFrom:
-		            configMapKeyRef:
-		              name: mongo-configmap
-		              key: database_url
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-configmap
+                  key: database_url
 ---
 apiVersion: v1
 kind: Service
